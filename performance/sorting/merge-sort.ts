@@ -12,6 +12,7 @@ export function mergeSort(numbers: number[]): number[] {
   if (LOG) console.log("🚀 ~ mergeSort ~ left:", left);
   const right = numbers.slice(middle);
   if (LOG) console.log("🚀 ~ mergeSort ~ right:", right);
+
   const result = merge(mergeSort(left), mergeSort(right));
   if (LOG) console.log("🚀 ~ mergeSort ~ result:", result);
   if (LOG) console.log("-------------------");
@@ -19,8 +20,9 @@ export function mergeSort(numbers: number[]): number[] {
 }
 
 function merge(left: number[], right: number[]): number[] {
-  console.log("🚀 ~ merge ~ right:", right);
-  console.log("🚀 ~ merge ~ left:", left);
+  if (LOG) console.log("🚀 ~ merge ~ right:", right);
+  if (LOG) console.log("🚀 ~ merge ~ left:", left);
+
   const sorted = [];
   let leftIndex = 0;
   let rightIndex = 0;
@@ -39,4 +41,4 @@ function merge(left: number[], right: number[]): number[] {
   // (one of the arrays may have elements left)
   return sorted.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
-mergeSort(generateRandomArray(1000));
+mergeSort(generateRandomArray(10));
