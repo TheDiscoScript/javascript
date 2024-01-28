@@ -6,8 +6,8 @@ import {
   testForOfLoop,
   testMap,
   testReduce,
-} from ".";
-import { largeArr, midArr, smallArr, tinyArr } from "./test-data";
+} from "..";
+import { largeArr, midArr, smallArr, tinyArr } from "../test-data";
 
 const suite = new Benchmark.Suite();
 
